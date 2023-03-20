@@ -1,0 +1,9 @@
+# .air.toml
+
+[build]
+bin = "main"
+cmd = "go build -o main"
+watch = ["main.go"]
+
+[run]
+cmd = "./main"
