@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"strconv"
 )
@@ -15,11 +16,14 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 	files := []string{
 		"./ui/html/home.page.tmpl",
-		"./ui/html/base.page.tmpl",
+		"./ui/html/base.layout.tmpl",
+		"./ui/html/footer.partial.tmpl",
+		"./ui/html/modal.partial.tmpl",
 	}
 
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
+		log.Println(err.Error())
 		http.Error(w, "template not found", 500)
 		return
 	}

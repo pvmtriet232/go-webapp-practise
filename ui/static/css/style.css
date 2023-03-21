@@ -1,0 +1,87 @@
+h1,p{
+    font-family: 'Indie Flower', cursive;
+
+}
+html,body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+html{
+    background-image: url("assets/brick.jpg");
+    background-size: cover;
+    font-size: 30px;
+    height: 100%;
+}
+.modal-background{
+    background-color: rgba(0, 0, 0, 0.385);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index:-10;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out, z-index 200ms ease-in-out;
+}
+.modal-background.active{
+    z-index: 9;
+    opacity: 1;
+    
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.button{
+    font-size: 22px;
+    text-align: center;
+    line-height: 44px;
+    background-color: #cc4331;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 25px;
+    outline: 0 !important;
+    box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgb(165, 165, 165);
+    border-left: 2px solid white;
+    border-top: 1px solid white;
+    transition: all 150ms ease-in-out;
+    margin-top: 0;
+}
+.button:hover{
+    background-color: #d25544;
+    box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+
+}
+.button:active{
+    margin-top: 4px;
+    box-shadow: none;
+}
+.modal{
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    height: auto;
+    z-index: -10;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out, z-index 200ms ease-in-out;
+}
+.modal.active{
+    z-index: 10;
+    opacity: 1;
+}
+
+.close{
+    background-color: white;
+    color: #ccc;
+}
+.close:hover{
+    color: white;
+    background-color: rgb(222, 222, 222);
+
+
+}
+.text-right{
+    text-align: right;
+}

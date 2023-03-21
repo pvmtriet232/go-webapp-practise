@@ -5,6 +5,11 @@
 <head>
     <meta charset='utf-8'>
     <title>{{template "title" .}} - Snippetbox</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ui/static/css/style.css">
+    <title>project modal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,9 +19,13 @@
     <nav>
         <a href='/'>Home</a>
     </nav>
+    <div>
+        {{template "modal" .}}
+    </div>
     <main>
         {{template "main" .}}
     </main>
+        {{template "footer" .}}
 </body>
 
 </html>
