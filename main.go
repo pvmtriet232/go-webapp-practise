@@ -20,11 +20,9 @@ func showSnippet(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateSnippet(w http.ResponseWriter, r *http.Request) {
-	Al := http.MethodPost
-	if r.Method != Al {
-		w.Header().Set("Allow", Al)
-		w.WriteHeader(405)
-		w.Write([]byte("method are not allowed"))
+	if r.Method != http.MethodPost {
+		w.Header().Set("Allow", http.MethodPost)
+		http.Error(w, "Method Not Allow", 404)
 		return
 	}
 	w.Write([]byte("create snippet"))
