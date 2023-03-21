@@ -12,7 +12,13 @@ func home(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
-	ts, err := template.ParseFiles("ui/html/home.page.tmpl")
+
+	files := []string{
+		"./ui/html/home.page.tmpl",
+		"./ui/html/base.page.tmpl",
+	}
+
+	ts, err := template.ParseFiles(files...)
 	if err != nil {
 		http.Error(w, "template not found", 500)
 		return
