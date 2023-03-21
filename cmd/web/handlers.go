@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 	"strconv"
 )
@@ -11,7 +12,13 @@ func home(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
-	w.Write([]byte("Hello from Snippetbox"))
+	ts, err := template.ParseFiles("ui/html/home.page.tmpl")
+	if err != nil {
+		http.Error(w, "template not found", 500)
+		return
+	}
+	ts.Execute(w, nil)
+
 }
 
 func showSnippet(w http.ResponseWriter, r *http.Request) {
