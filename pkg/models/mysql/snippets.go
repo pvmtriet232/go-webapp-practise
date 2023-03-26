@@ -3,10 +3,7 @@ package mysql
 import (
 	"database/sql"
 	"errors"
-	// Import the models package that we just created. You need to prefix this with
-	// whatever module path you set up back in chapter 02.02 (Project Setup and Enabling
-	// Modules) so that the import statement looks like this:
-	// "{your-module-path}/pkg/models".
+
 	"github.com/pvmtriet232/go-webapp-practise/pkg/models"
 )
 
