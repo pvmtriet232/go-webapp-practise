@@ -107,7 +107,7 @@ WHERE expires > UTC_TIMESTAMP() ORDER BY created DESC LIMIT 10`
 	// When the rows.Next() loop has finished we call rows.Err() to retrieve any
 	// error that was encountered during the iteration. It's important to
 	// call this - don't assume that a successful iteration was completed
-	// over the whole resultset.
+	// over the whole resultset.s
 	if err = rows.Err(); err != nil {
 		return nil, err
 	}
